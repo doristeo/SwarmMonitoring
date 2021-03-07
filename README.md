@@ -46,5 +46,6 @@ This message shows that your installation appears to be working correctly.**, з
 `mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';`   здесь _password_ - ваш новый пароль для root mysql<br>
 Выйдите из оболочки mysql> командой `quit`<br>
 Командой `docker inspect mysql` можно посмотреть параметры mysql. В частности, мы видимо, что файлы БД будут находиться на хостовой машине (а не в контейнере!) в папке /var/lib/mysql<br>
+<br><br>
 
 
