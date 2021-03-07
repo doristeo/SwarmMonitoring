@@ -38,6 +38,7 @@ type Logdata struct {
 	Peers     int    `json:"peers"`
 	Diskavail int    `json:"diskavail"`
 	Diskfree  int    `json:"diskfree"`
+        Cheque    int    `json:"cheque"`
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -45,19 +46,20 @@ func postFunction(w http.ResponseWriter, r *http.Request) {
 
 	database, err := CreateDatabase()
 	if err != nil {
-		log.Fatal("Database connection failed")
-	}
+   	  log.Fatal("Database connection failed")
+ 	}
 
 	var logdata Logdata
 	json.NewDecoder(r.Body).Decode(&logdata)
 
-	s := "INSERT nodes(name, peers, diskavail, diskfree) VALUES ('" + logdata.Name + "', " + strconv.Itoa(logdata.Peers) + ", " +
-		strconv.Itoa(logdata.Diskavail) + ", " + strconv.Itoa(logdata.Diskfree) + ")"
+	s := "INSERT nodes(name, peers, diskavail, diskfree, cheque) VALUES ('" + logdata.Name + "', " + strconv.Itoa(logdata.Peers) + ", " +
+		strconv.Itoa(logdata.Diskavail) + ", " + strconv.Itoa(logdata.Diskfree) + ", " + strconv.Itoa(logdata.Cheque) + ")"
 	//fmt.Println(s)
 	_, err = database.Exec(s)
 	if err != nil {
-		log.Println("Database INSERT failed --->>  \n" + s)
+		log.Println( err)
 	}
+        database.Close()
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------
