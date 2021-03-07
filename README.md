@@ -28,9 +28,14 @@ This message shows that your installation appears to be working correctly.**, з
 `docker run -d --name=grafana -p 3000:3000 grafana/grafana:7.4.3-ubuntu`<br>
 Проверьте успешность установки `http://имя_или_IP_VPS:3000/`, вас должно встретить окно авторизации.<br> Вход по-умолчанию **admin/admin**. <br>Обязательно смените пароль!<br>Далее вас встретит интерфейс Grafana, но тут пока ничего делать не надо.
 
-2. Установка MySQL server в docker.
-Инструкция тут https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/docker-mysql-getting-started.html, но нам нужна одна команда:
-`docker pull mysql/mysql-server:latest`
+#### 2. Установка MySQL server в docker.
+Инструкция тут https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/docker-mysql-getting-started.html,<br> но нам нужна одна команда:
+`docker pull mysql/mysql-server:latest`<br>
+Запустим контейнер с mysql-server<br>
+`docker run --name=mysql  --restart on-failure -d mysql/mysql-server:latest`
+
+Проверим, какие контейнеры запущены:<br>
+`docker ps`
 
 
 
