@@ -37,7 +37,10 @@ This message shows that your installation appears to be working correctly.**, з
 Проверим, какие контейнеры запущены:<br>
 `docker ps`
 ![dockerps](https://user-images.githubusercontent.com/3895507/110248513-a96e8280-7f82-11eb-9051-112c19a53d0a.png)
+Получим пароль для root, сгенерированный нам конейнером:
+`docker logs mysql 2>&1 | grep GENERATED`
 
+СОХРАНИМ ЕГО В НАДЁЖНОЕ МЕСТО!
 
 
 
