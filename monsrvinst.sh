@@ -17,4 +17,5 @@ cd /root
 wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/docker-compose.yaml
 mkdir /root/init
 wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/createdb.sql -P /root/init
+docker-compose up -d
 
