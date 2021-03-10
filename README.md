@@ -29,27 +29,7 @@ This message shows that your installation appears to be working correctly.**, з
 Проверьте успешность установки `http://имя_или_IP_VPS:3000/`, вас должно встретить окно авторизации.<br> Вход по-умолчанию **admin/admin**. <br>Обязательно смените пароль!<br>Далее вас встретит интерфейс Grafana, но тут пока ничего делать не надо.
 
 #### 2. Установка MySQL server в docker.
-Инструкция тут https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/docker-mysql-getting-started.html,<br> но нам нужна одна команда:
-`docker pull mysql/mysql-server:latest`<br>
-Запустим контейнер с mysql-server<br>
-`docker run --name=mysql  --restart on-failure -d mysql/mysql-server:latest` -здесь _--name=mysql_ задаёт имя нашему инстансу
 
-Проверим, какие контейнеры запущены:<br>
-`docker ps`
-![dockerps](https://user-images.githubusercontent.com/3895507/110248513-a96e8280-7f82-11eb-9051-112c19a53d0a.png)
-Получим пароль для root, сгенерированный нам конейнером:
-`docker logs mysql 2>&1 | grep GENERATED`
-![dockerpass](https://user-images.githubusercontent.com/3895507/110248722-a1631280-7f83-11eb-85da-58b291de1a69.png)<br>
-Подключаемся к mysql, на просьбу ввести пароль вводим пароль, выданной предыдущей командой: <br>
-`docker exec -it mysql mysql -uroot -p`<br>
-Сменим пароль. Это необходимо сделать!<br>
-`mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';`   здесь _password_ - ваш новый пароль для root mysql<br>
-Выйдите из оболочки mysql> командой `quit`<br>
-Командой `docker inspect mysql` можно посмотреть параметры mysql. В частности, мы видим, что файлы БД будут находиться на хостовой машине (а не в контейнере!) в папке /var/lib/mysql<br>
-<br><br>
-Теперь необходимо создать БД в mysql. <br>
-Для этого загрузим скрипт на сервер <br>
-wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/createdb.sql
 
 
 
