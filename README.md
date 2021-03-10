@@ -45,7 +45,16 @@ This message shows that your installation appears to be working correctly.**, з
 Сменим пароль. Это необходимо сделать!<br>
 `mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';`   здесь _password_ - ваш новый пароль для root mysql<br>
 Выйдите из оболочки mysql> командой `quit`<br>
-Командой `docker inspect mysql` можно посмотреть параметры mysql. В частности, мы видимо, что файлы БД будут находиться на хостовой машине (а не в контейнере!) в папке /var/lib/mysql<br>
+Командой `docker inspect mysql` можно посмотреть параметры mysql. В частности, мы видим, что файлы БД будут находиться на хостовой машине (а не в контейнере!) в папке /var/lib/mysql<br>
 <br><br>
+Теперь необходимо создать БД в mysql. <br>
+Для этого загрузим скрипт на сервер <br>
+wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/createdb.sql
+
+
+
+
+
+
 
 
