@@ -14,8 +14,17 @@ services:
           - /root/databases:/var/lib/mysql
       container_name: mysql1
       ports:
-          - "3306:3306"
+          - 3306:3306
       image: mysql
-
+      restart: always
+  grafana:
+      container_name: grafana_swarm
+      image: doristeo/grafana_swarm:latest
+      ports:
+          - 3000:3000
+      volumes:
+            - ./grafana:/var/lib/grafana
+            - ./grafana/provisioning/:/etc/grafana/provisioning/
+      restart: always
 volumes:
       databases: {}
