@@ -15,6 +15,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo su
 cd /root
 wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/docker-compose.yaml
-mkdir /init
+mkdir /root/init
 wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/createdb.sql -P /root/init
 
