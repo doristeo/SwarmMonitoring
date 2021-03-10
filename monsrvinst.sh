@@ -10,12 +10,9 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-
-# download files
-sudo su
-cd /root
-wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/docker-compose.yaml
-mkdir /root/init
-wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/createdb.sql -P /root/init
-docker-compose up -d
+sudo cd /root
+sudo wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/docker-compose.yaml
+sudo mkdir /root/init
+sudo wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/createdb.sql -P /root/init
+sudo docker-compose up -d
 
