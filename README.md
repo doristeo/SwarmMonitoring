@@ -1,3 +1,4 @@
+![2021-03-11_09-59-38](https://user-images.githubusercontent.com/3895507/110748305-98f32c00-8250-11eb-9098-75f2c5b89597.png)
 #### Install dockers of Grafana, Mysql and go-binary swarmon service to the SERVER
 ```
 cd /root
