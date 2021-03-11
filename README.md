@@ -14,7 +14,7 @@ cd /root
 wget https://github.com/doristeo/SwarmMonitoring/raw/main/send.sh
 chmod +x send.sh
 ```
-test all ```/root/send.sh http://public_IP_of_your_server:8080```, if ok you will see the data in the Grafana on your server http://public_IP_of_your_server:3000.
+test all ```/root/send.sh http://public_IP_of_your_server:8080```, if ok you will see the data on your Grafana-server http://public_IP_of_your_server:3000.
 ```
 crontab -e
 ```
