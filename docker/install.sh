@@ -15,5 +15,6 @@ sudo mkdir /root/swarmon/ && sudo mkdir /root/swarmon/mysql && sudo mkdir /root/
 sudo wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/docker/mysql/createdb.sql -P /root/swarmon/mysql/init
 sudo mkdir /root/swarmon/grafana
 sudo wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/grafana/grafana.tar.gz
-sudo tar -zxvf grafana.tar.gz -C /root/swarmon/grafana
+sudo tar -zxvf grafana.tar.gz -C /
+sudo 
 sudo docker-compose up -d
