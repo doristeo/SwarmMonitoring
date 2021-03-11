@@ -20,6 +20,8 @@ services:
   grafana:
       container_name: grafana_swarm
       image: doristeo/grafana_swarm:latest
+      volumes:
+           - /root/swarmon/grafana:/var/lib/grafana
       ports:
           - 3000:3000
       restart: always
