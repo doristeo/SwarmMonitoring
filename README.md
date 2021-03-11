@@ -5,16 +5,16 @@
 ```
 cd /root
 wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instdeb.sh
-chmod +x instsrv.sh
-./instsrv.sh
+chmod +x instdeb.sh
+./instdeb.sh
 ```
 
 **Ubuntu:**
 ```
 cd /root
 wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instubu.sh
-chmod +x instsrv.sh
-./instsrv.sh
+chmod +x instubu.sh
+./instubu.sh
 ```
 
 Default login/password to Grafana is admin/admin. 
