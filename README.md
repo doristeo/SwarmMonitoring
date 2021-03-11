@@ -16,6 +16,11 @@ wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instubu.sh
 chmod +x instubu.sh
 ./instubu.sh
 ```
+**Centos:**<br>
+Maybe later.
+
+**Raspberry Pi**<br>
+Never.
 
 Default login/password to Grafana is admin/admin. 
 
