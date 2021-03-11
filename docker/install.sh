@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# install docker & compose
 sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates curl gnupg -y
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -16,5 +15,10 @@ sudo wget https://raw.githubusercontent.com/doristeo/SwarmMonitoring/main/docker
 sudo mkdir /root/swarmon/grafana
 sudo wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/grafana/grafana.tar.gz
 sudo tar -zxvf grafana.tar.gz -C /
-sudo 
 sudo docker-compose up -d
+echo "-------------------------------------------------------------------------------------------------------"
+ip=$(curl -s api.infoip.io/ip)
+echo "My Public IP is "$ip", remember it for the setting to the send-script on each your nodes!"
+echo "My Grafana http://"$ip":3000/"
+echo "-------------------------------------------------------------------------------------------------------"
+ 
