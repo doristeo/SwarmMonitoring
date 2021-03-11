@@ -1,34 +1,25 @@
 ### SwarmMon
 
-#### 1. Установим Grafana на VPS. Это может быть сервер с нодой или отдельный. Отдельный лучше, но не факт.
-
-1.1 Установка Grafana в docker.
-
-1.1.1 Установка Docker
-Сначала установим сам docker по инструкции отсюда https://docs.docker.com/engine/install/debian/
-
-Выжимка оттуда:
+###### Install dockers of Grafana, Mysql and go-binary swarmon service to the server
 ```
-sudo apt-get update
-sudo apt-get install apt-transport-https ca-certificates curl gnupg -y
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+cd /root
+wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instsrv.sh
+chmod +x instsrv.sh
+./instsrv.sh
 ```
-Проверим, что docker установился нормально командой `sudo docker run hello-world`
-Если среди вывода есть строки <br>**Hello from Docker!
-This message shows that your installation appears to be working correctly.**, значит, всё в порядке.<br>
-Установка Docker завершена. Переходим к установке Grafana.
 
-1.1.2 Установка Grafana.
-Инструкция описана здесь https://grafana.com/grafana/download?platform=docker
-Хотя, там только одна команда:<br>
-`docker run -d --name=grafana -p 3000:3000 grafana/grafana:7.4.3-ubuntu`<br>
-Проверьте успешность установки `http://имя_или_IP_VPS:3000/`, вас должно встретить окно авторизации.<br> Вход по-умолчанию **admin/admin**. <br>Обязательно смените пароль!<br>Далее вас встретит интерфейс Grafana, но тут пока ничего делать не надо.
+###### Install a script that sends data to the server for each node
+```
+cd /root
+wget https://github.com/doristeo/SwarmMonitoring/raw/main/send.sh
+chmod +x send.sh
+crontab -e
+```
+add this string ``` */10 * * * * /root/send.sh http://public_IP_of_your_server:8080 >> /dev/null 2>&1``` <br>
+and restart cron ```systemctl restart cron```
+The node will send data to the monitoring server every 10 minutes.
 
-#### 2. Установка MySQL server в docker.
+
 
 
 
