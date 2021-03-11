@@ -6,7 +6,7 @@ wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instsrv.sh
 chmod +x instsrv.sh
 ./instsrv.sh
 ```
-
+Default login/password to Grafana is admin/admin. 
 
 #### Install a script that sends data to the server for EACH NODE
 ```
