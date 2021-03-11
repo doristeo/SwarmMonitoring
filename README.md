@@ -1,11 +1,22 @@
 ![2021-03-11_09-59-38](https://user-images.githubusercontent.com/3895507/110748305-98f32c00-8250-11eb-9098-75f2c5b89597.png)
 #### Install dockers of Grafana, Mysql and go-binary swarmon service to the SERVER
+
+**Debian:**
 ```
 cd /root
-wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instsrv.sh
+wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instdeb.sh
 chmod +x instsrv.sh
 ./instsrv.sh
 ```
+
+**Ubuntu:**
+```
+cd /root
+wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instubu.sh
+chmod +x instsrv.sh
+./instsrv.sh
+```
+
 Default login/password to Grafana is admin/admin. 
 
 #### Install a script that sends data to the server for EACH NODE
