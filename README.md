@@ -17,7 +17,7 @@ test all ```/root/send.sh http://public_IP_of_your_server:8080```, if ok you wil
 ```
 crontab -e
 ```
-add this string ``` */10 * * * * /root/send.sh http://public_IP_of_your_server:8080 >> /dev/null 2>&1``` <br>
+add this string ``` */10 * * * * /root/send.sh http://public_IP_of_your_server:8080 > /dev/null 2>&1``` <br>
 and restart cron ```systemctl restart cron``` <br>
 The node will send data to the monitoring server every 10 minutes.
 
