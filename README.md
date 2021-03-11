@@ -6,13 +6,14 @@ chmod +x instsrv.sh
 ./instsrv.sh
 ```
 
+
 #### Install a script that sends data to the server for EACH NODE
 ```
 cd /root
 wget https://github.com/doristeo/SwarmMonitoring/raw/main/send.sh
 chmod +x send.sh
 ```
-test all ```/root/send.sh http://public_IP_of_your_server:8080```, if ok you will see data in the Grafana.
+test all ```/root/send.sh http://public_IP_of_your_server:8080```, if ok you will see the data in the Grafana on your server http://public_IP_of_your_server:3000.
 ```
 crontab -e
 ```
