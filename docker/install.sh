@@ -18,7 +18,7 @@ sudo tar -zxvf grafana.tar.gz -C /
 sudo docker-compose up -d
 echo "-------------------------------------------------------------------------------------------------------"
 ip=$(curl -s api.infoip.io/ip)
-echo "My Public IP is "$ip", remember it for the setting to the send-script on each your nodes!"
+echo "My Public IP is "$ip", remember it! It will need to be specified in the script on each node!"
 echo "My Grafana http://"$ip":3000/"
 echo "-------------------------------------------------------------------------------------------------------"
  
